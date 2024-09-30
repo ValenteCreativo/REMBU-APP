@@ -11,11 +11,11 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Simulación de autenticación simple
+    // Simple authentication simulation
     if (email === 'admin@rembu.com' && password === 'admin') {
-      navigate('/dashboard');
+      navigate('/dashboard3');
     } else {
-      alert('Credenciales incorrectas. Usa admin/admin');
+      alert('Incorrect credentials. Use admin/admin');
     }
   };
 
@@ -25,11 +25,11 @@ const Login = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <div className={styles.loginBox}> {/* Añadir esta clase para aplicar los nuevos estilos */}
-        <h2 className={styles.loginTitle}>Iniciar Sesión</h2>
+      <div className={styles.loginBox}> {/* Add this class to apply the new styles */}
+        <h2 className={styles.loginTitle}>Login</h2>
         <form className={styles.loginForm} onSubmit={handleLogin}>
           <div className={styles.formGroup}>
-            <label htmlFor="email">Correo Electrónico:</label>
+            <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -40,7 +40,7 @@ const Login = () => {
             />
           </div>
           <div className={styles.formGroup}>
-            <label htmlFor="password">Contraseña:</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
               id="password"
@@ -52,10 +52,10 @@ const Login = () => {
           </div>
           <div className={styles.buttonGroup}>
             <button type="submit" className={styles.loginButton}>
-              Iniciar Sesión
+              Login
             </button>
             <button type="button" onClick={handleSignUp} className={styles.signUpButton}>
-              Crear Cuenta
+              Sign Up
             </button>
           </div>
         </form>

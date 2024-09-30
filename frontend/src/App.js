@@ -8,7 +8,7 @@ import Login from './login/login';
 import Dashboard from './dashboard/Dashboard';
 import Dashboard2 from './dashboard/Dashboard2';
 import Dashboard3 from './dashboard/dashboard3';
-import DAO from './dashboard/dao'; // Asegúrate de que esta ruta sea correcta
+import DAO from './dashboard/dao';
 import Preorder from './preorder/preorder';
 import FAQ from './FAQ/faq';
 
@@ -109,7 +109,7 @@ function App() {
             <section className="impact" id="impact">
               <h2>Real Impact</h2>
               <div className="impact-content">
-                <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmSEqUgcTumgYyApoqKgqjVs1tMtkARhjqHRrKgFkjjPeK" alt="Urban Forest Impact" className="impact-image" />
+                <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmZUvzVtT6qNbSprtTctnNDLBoEzyJmFyk5TpZrCdGkB3S" alt="Urban Forest Impact" className="impact-image" />
                 <div className="impact-description">
                   <p>
                     Thanks to our antennas, cities can obtain precise data on the health of their urban forests. This enables decision-makers to implement effective strategies for sustainable growth and environmental preservation.

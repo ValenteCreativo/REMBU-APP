@@ -1,4 +1,3 @@
-// DAO.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './dao.module.css';
@@ -7,6 +6,9 @@ const DAO = () => {
   // State for proposals
   const [proposals, setProposals] = useState([]);
   const [message, setMessage] = useState({ type: '', content: '' });
+
+  // State for Rembu Tokens (initially set to 150)
+  const [rembuTokens, setRembuTokens] = useState(150);
 
   // Simulated proposals data
   const simulatedProposals = [
@@ -43,7 +45,7 @@ const DAO = () => {
   // Fetch proposals from API (for now, using simulated data)
   const fetchProposals = async () => {
     try {
-      // Here you would normally fetch from the API, but we're using simulated proposals for now
+      // Normally, you would fetch from the API, but we're using simulated proposals for now
       setProposals(simulatedProposals);
     } catch (error) {
       setMessage({ type: 'error', content: 'Error fetching proposals.' });
@@ -54,15 +56,22 @@ const DAO = () => {
   // Vote for a proposal
   const voteProposal = async (proposalId) => {
     try {
-      // Update the vote count (this would normally involve an API call)
-      setProposals((prevProposals) =>
-        prevProposals.map((proposal) =>
-          proposal.id === proposalId
-            ? { ...proposal, voteCount: proposal.voteCount + 1 }
-            : proposal
-        )
-      );
-      setMessage({ type: 'success', content: 'Vote submitted successfully!' });
+      if (rembuTokens >= 10) { // Check if the user has enough tokens
+        // Decrease the Rembu Tokens by 10
+        setRembuTokens((prevTokens) => prevTokens - 10);
+
+        // Update the vote count (this would normally involve an API call)
+        setProposals((prevProposals) =>
+          prevProposals.map((proposal) =>
+            proposal.id === proposalId
+              ? { ...proposal, voteCount: proposal.voteCount + 1 }
+              : proposal
+          )
+        );
+        setMessage({ type: 'success', content: 'Vote submitted successfully!' });
+      } else {
+        setMessage({ type: 'error', content: 'Not enough Rembu Tokens to vote!' });
+      }
     } catch (error) {
       setMessage({ type: 'error', content: 'Error submitting vote.' });
       console.error(error);
@@ -82,6 +91,11 @@ const DAO = () => {
         </p>
       )}
 
+      {/* Display current Rembu Token count */}
+      <div className={styles.tokenContainer}>
+        <h3>Rembu Tokens: {rembuTokens}</h3>
+      </div>
+
       <div className={styles.proposalList}>
         {proposals.length === 0 ? (
           <p>No proposals available at this time.</p>
@@ -94,6 +108,7 @@ const DAO = () => {
               <button
                 onClick={() => voteProposal(proposal.id)}
                 className={styles.voteButton}
+                disabled={rembuTokens < 10} // Disable button if not enough tokens
               >
                 Vote
               </button>
