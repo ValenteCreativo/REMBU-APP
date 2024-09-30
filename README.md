@@ -1,4 +1,4 @@
-# REMBU - Urban Forest Monitoring and Rewards System
+# REMBU - Urban Forest Assesment and Monitoring Network
 
 ## Project Overview
 
@@ -24,7 +24,7 @@ The objective is to provide real-time data to decision-makers to foster the deve
 
 2. **Data Collection**: The antenna collects data on CO₂ levels, humidity, air quality, and more. This data is sent to the Scroll's blockchain.
 
-3. **Rewards**: Users receive monthly rewards in tokens for contributing data that helps improve urban forest management.
+3. **Rewards**: Users receive monthly rewards in tokens for contributing data that helps improve urban forest management. This tokens initially will work as a Governance Token to vote for environmental impact initiatives worth funding with the sale of the antennas income. Ideally these tokens will have a financial value to offer a ROI to the users that acquire an Antenna. 
 
 4. **Decentralized and Transparent**: All data is stored on Scroll's Layer 2 blockchain, leveraging zero-knowledge proofs for scalability and security.
 
@@ -72,7 +72,9 @@ module.exports = {
   }
 };
 
-------
+
+
+----------
 
 ## Technologies Used
 
@@ -82,6 +84,8 @@ Backend: Node.js
 Blockchain Interaction: Axios, Ethers.js, Alchemy API
 Scroll Network: Zero-Knowledge Rollups (ZK-rollups) for secure and scalable transactions
 Hardhat: Development environment for compiling, testing, and deploying smart contracts
+Photoshop: For graphic Design
+Blender: Antenna Prototype ideation
 
 ----
 
@@ -92,6 +96,8 @@ We plan to expand REMBU's features, including:
 - More types of environmental sensors
 - Integration with local municipalities for real-time data analysis
 - Additional layers of decentralization for user participation in project governance
+- DAO Governance to finance environmental impact initiatives
+- Token ICO to reward with ROI to the users that acquire the antenna
 
 -------
 
