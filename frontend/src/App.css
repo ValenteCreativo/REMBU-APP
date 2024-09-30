@@ -58,8 +58,7 @@ button:hover {
   align-items: center;
   text-align: center;
   padding: 180px 20px 120px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(-1px);
+
   position: relative;
 }
 
@@ -70,8 +69,6 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
   z-index: 1;
 }
 
@@ -112,8 +109,8 @@ button:hover {
 
 /* Benefits Section */
 .benefits {
-  background: var(--light-white);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
 }
 
 .benefits h2 {
@@ -155,13 +152,10 @@ button:hover {
 
 .benefit p {
   font-size: 1rem;
+  background: rgba(16, 1, 1, 0.289);
 }
 
 /* Technology Section */
-.technology {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-}
 
 .technology h2 {
   text-align: center;
@@ -171,8 +165,7 @@ button:hover {
 }
 
 .technology-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
@@ -219,8 +212,8 @@ button:hover {
 
 /* Tokenomics Section */
 .tokenomics {
-  background: var(--light-white);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
   text-align: center;
 }
 
@@ -249,10 +242,6 @@ button:hover {
 }
 
 /* Impact Section */
-.impact {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-}
 
 .impact h2 {
   text-align: center;
@@ -267,6 +256,7 @@ button:hover {
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+  background: rgba(16, 1, 1, 0.289);
 }
 
 .impact-image {
@@ -300,8 +290,8 @@ button:hover {
 
 /* Footer */
 .footer {
-  background: var(--semi-transparent-black);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
   text-align: center;
   padding: 30px 20px;
 }
