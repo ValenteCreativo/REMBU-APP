@@ -121,6 +121,10 @@
     .card {
       padding: 1.5rem;
     }
+
+    .antenna-icon {
+        font-size: 120px; /* Ajusta el tamaño del icono de antena */
+      }
   
     h2 {
       font-size: 1.5rem;
@@ -131,3 +135,69 @@
     }
   }
   
+  .mapContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .antennaList {
+    flex: 1; /* Make it flexible to take remaining space */
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .antennaList h3 {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .antennaItem {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .antennaItem:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .antennaList {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px; /* Adjust max width as needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2); /* Background color for the list */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .antennaCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .antennaCard {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .antennaCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+    

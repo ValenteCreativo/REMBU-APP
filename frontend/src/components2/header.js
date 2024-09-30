@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmT1EhAvdHg8faXzDve29RqYKYSvjLx3JMyaC9YZHb6boG" alt="Logo" className="logo" />
+            <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmZK5C8Pt7aRGSghNQXvTPz9VMKhE5xY2oEzXprcXV81kk" alt="Logo" className="logo" />
             <nav className="nav">
                 <button className="button" onClick={() => navigate('/preorder')}>Pre-order Antenna</button>
                 <button className="button" onClick={() => navigate('/faq')}>FAQ</button> {/* Cambié 'FaQ' a 'faq' para mantener consistencia */}

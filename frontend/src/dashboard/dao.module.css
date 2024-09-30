@@ -1,0 +1,93 @@
+/* dao.module.css */
+
+.daoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+  }
+  
+  .proposalCard {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .proposalCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .proposalCard h3 {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+  }
+  
+  .proposalCard p {
+    font-size: 1.2rem;
+    color: var(--white);
+  }
+  
+  .voteButton {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: var(--primary-green);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .voteButton:hover {
+    background-color: var(--hover-green);
+    transform: translateY(-2px);
+  }
+  
+  .error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .success {
+    color: var(--primary-green);
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .proposalCard {
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .voteButton {
+      font-size: 1rem;
+    }
+  }
+  

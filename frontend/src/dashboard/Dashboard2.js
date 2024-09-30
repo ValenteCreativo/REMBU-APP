@@ -1,40 +1,40 @@
 // src/pages/dashboard2.js
 
 import React, { useState, useEffect } from 'react';
-import styles from './dashboard.module.css'; // Usando el mismo CSS que dashboard.js
+import styles from './dashboard.module.css'; // Using the same CSS as dashboard.js
 
 const Dashboard2 = () => {
-  // Simulación de una antena ya registrada
+  // Simulating a registered antenna
   const [isRegistered, setIsRegistered] = useState(true);
 
-  // Datos simulados recolectados por la antena
+  // Simulated data collected by the antenna
   const [sensorData, setSensorData] = useState({
-    humedad: 55,
-    ruido: 65,
-    rayosUV: 8,
-    calidadAire: 'Buena',
+    humidity: 55,
+    noise: 65,
+    UV: 8,
+    airQuality: 'Good',
     CO2: 400,
   });
 
-  // Tokens simulados
+  // Simulated tokens
   const [tokens, setTokens] = useState(150);
 
-  // Mensajes de éxito o error
+  // Success or error messages
   const [message, setMessage] = useState({ type: '', content: '' });
 
-  // Función simulada para reclamar recompensas
+  // Simulated function to claim rewards
   const claimRewards = () => {
-    // Simular el reclamo de recompensas
+    // Simulate claiming rewards
     setTokens(0);
-    setMessage({ type: 'success', content: 'Recompensas reclamadas exitosamente.' });
+    setMessage({ type: 'success', content: 'Rewards claimed successfully.' });
   };
 
   return (
     <div className={styles.dashboardContainer}>
-      {/* Registro de Antena */}
+      {/* Antenna Registration */}
       <div className={styles.card}>
-        <h2>Antena Registrada</h2>
-        <p>Tu antena está registrada y operativa.</p>
+        <h2>Registered Antenna</h2>
+        <p>Your antenna is registered and operational.</p>
         {message.content && (
           <p className={message.type === 'error' ? styles.error : styles.success}>
             {message.content}
@@ -42,26 +42,26 @@ const Dashboard2 = () => {
         )}
       </div>
 
-      {/* Datos Recolectados */}
+      {/* Collected Data */}
       {isRegistered && (
         <div className={styles.card}>
-          <h2>Datos Recolectados</h2>
+          <h2>Collected Data</h2>
           <div className={styles.sensorData}>
             <div className={styles.sensor}>
-              <span>Humedad:</span>
-              <span>{sensorData.humedad !== null ? `${sensorData.humedad}%` : 'Loading...'}</span>
+              <span>Humidity:</span>
+              <span>{sensorData.humidity !== null ? `${sensorData.humidity}%` : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
-              <span>Ruido:</span>
-              <span>{sensorData.ruido !== null ? `${sensorData.ruido} dB` : 'Loading...'}</span>
+              <span>Noise:</span>
+              <span>{sensorData.noise !== null ? `${sensorData.noise} dB` : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
-              <span>Rayos UV:</span>
-              <span>{sensorData.rayosUV !== null ? sensorData.rayosUV : 'Loading...'}</span>
+              <span>UV Rays:</span>
+              <span>{sensorData.UV !== null ? sensorData.UV : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
-              <span>Calidad de Aire:</span>
-              <span>{sensorData.calidadAire !== null ? sensorData.calidadAire : 'Loading...'}</span>
+              <span>Air Quality:</span>
+              <span>{sensorData.airQuality !== null ? sensorData.airQuality : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
               <span>CO2:</span>
@@ -71,15 +71,15 @@ const Dashboard2 = () => {
         </div>
       )}
 
-      {/* Recompensas */}
+      {/* Rewards */}
       {isRegistered && (
         <div className={styles.card}>
-          <h2>Recompensas</h2>
+          <h2>Rewards</h2>
           <div className={styles.rewards}>
-            <p>Tokens Ganados: {tokens}</p>
+            <p>Tokens Earned: {tokens}</p>
             {tokens > 0 && (
               <button onClick={claimRewards} className={styles.button}>
-                Reclamar Recompensas
+                Claim Rewards
               </button>
             )}
           </div>

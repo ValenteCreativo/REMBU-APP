@@ -1,26 +1,35 @@
 import React from 'react';
 import './App.css';
 import { FaLeaf, FaChartLine, FaWallet, FaNetworkWired } from 'react-icons/fa';
-import { Routes, Route } from 'react-router-dom';  // Importamos Routes y Route
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components2/header';
-import Login from './login/login';  
+import DashboardHeader from './components2/headerdashboard';
+import Login from './login/login';
 import Dashboard from './dashboard/Dashboard';
 import Dashboard2 from './dashboard/Dashboard2';
+import Dashboard3 from './dashboard/dashboard3';
+import DAO from './dashboard/dao'; // Asegúrate de que esta ruta sea correcta
 import Preorder from './preorder/preorder';
 import FAQ from './FAQ/faq';
 
 function App() {
+  const location = useLocation();
+
+  const dashboardRoutes = ['/dashboard', '/dashboard2', '/dashboard3', '/dao'];
+  const isDashboardPage = dashboardRoutes.includes(location.pathname);
+
   return (
     <div className="App">
-      <Header />
+      {isDashboardPage ? <DashboardHeader /> : <Header />}
 
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/Preorder" element={<Preorder />} />
-        <Route path="/Dashboard2" element={<Dashboard2 />} />
-        {/* Puedes agregar más rutas aquí */}
+        <Route path="/dashboard2" element={<Dashboard2 />} />
+        <Route path="/dashboard3" element={<Dashboard3 />} />
+        <Route path="/dao" element={<DAO />} /> {/* Ruta para la nueva página DAO */}
         <Route path="/" element={
           <>
             {/* Hero Section */}
@@ -28,7 +37,7 @@ function App() {
               <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmZrw6i17V2fMr23RXiLXT3aGqEDjMRfPkFv7RT5xAvA29" alt="Logo" className="logo" />
               <h1>Monitor and protect urban forests from your home</h1>
               <p>Install an antenna, create an account, and receive monthly rewards for environmental preservation.</p>
-              <button className="cta-button">Pre-order your antenna</button>
+              <button className="cta-button">Join REMBU Community</button>
             </section>
 
             {/* Benefits */}
@@ -58,14 +67,29 @@ function App() {
               </div>
             </section>
 
-            {/* Technology */}
+            {/* How Does it Work? */}
+            <section className="how-it-works" id="how-it-works">
+              <h2>How Does it Work?</h2>
+              <p>
+                It's simple! Once you install an antenna at home, it begins collecting data on environmental factors such as humidity, temperature, air quality, and more. This data is sent securely to the blockchain using Scroll, an L2 Zero-Knowledge (ZK) network that ensures scalability and privacy. You earn rewards for each data point shared, contributing to a global effort to monitor urban forests.
+              </p>
+              <p>
+                Our system is fully decentralized, meaning the data you provide is not controlled by any single entity. Instead, it's secured on the blockchain, accessible to everyone, and helps create actionable insights for environmental protection.
+              </p>
+            </section>
+
+            {/* Advanced Technology */}
             <section className="technology" id="technology">
               <h2>Advanced Technology</h2>
               <div className="technology-content">
                 <div className="tech-description">
-                  <h3>How Our Antenna Works</h3>
+                  <h3>Scroll L2: Powering Decentralization</h3>
                   <p>
-                    Our antennas are equipped with multiple sensors that collect data on temperature, humidity, CO₂ levels, and more. This data is securely sent to our decentralized network, ensuring accuracy and reliability.
+                    We utilize Scroll, a Layer 2 Zero-Knowledge (ZK) rollup, to enhance scalability and reduce transaction costs while ensuring data integrity and privacy. ZK technology allows us to process large amounts of data without compromising on security, making it perfect for our use case of urban forest monitoring.
+                  </p>
+                  <h3>How Our Antennas Work</h3>
+                  <p>
+                    Each antenna is equipped with cutting-edge sensors to collect data such as humidity, CO₂ levels, temperature, and more. This data is securely transmitted to the blockchain, where it contributes to our decentralized environmental monitoring network.
                   </p>
                 </div>
                 <img
@@ -79,17 +103,6 @@ function App() {
                   className="antena-image"
                 />
               </div>
-            </section>
-
-            {/* Tokenomics */}
-            <section className="tokenomics" id="tokenomics">
-              <h2>Tokenomics</h2>
-              <div className="tokenomics-diagram">
-                <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmeNWvpwxDf11KDpEwhyZN2ERT2oZUZyKTCSRoVQFK45nq" alt="Tokenomics Diagram" />
-              </div>
-              <p>
-                Participate in our ecosystem and earn tokens for maintaining and operating antennas. These tokens can be used to access exclusive data, participate in project governance, and more.
-              </p>
             </section>
 
             {/* Impact */}
@@ -118,11 +131,11 @@ function App() {
       <footer className="footer">
         <div className="footer-links">
           <a href="#technology">Technology</a>
-          <a href="#tokenomics">Tokenomics</a>
+          <a href="#how-it-works">How it Works</a>
           <a href="#impact">Impact</a>
           <a href="#contact">Contact</a>
         </div>
-        <p>&copy; 2024 DePIN. All rights reserved.</p>
+        <p>&copy; 2024 Urban Forest Assesment and Monitoring Network (REMBU). All rights reserved.</p>
         <div className="social-media">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
           <a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a>

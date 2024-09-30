@@ -4,85 +4,85 @@ import axios from 'axios';
 import styles from './dashboard.module.css';
 
 const Dashboard = () => {
-  // Estados para el formulario de registro
+  // States for antenna registration form
   const [antennaId, setAntennaId] = useState('');
   const [isRegistered, setIsRegistered] = useState(false);
 
-  // Estados para los datos recolectados
+  // States for collected data
   const [sensorData, setSensorData] = useState({
-    humedad: null,
-    ruido: null,
-    rayosUV: null,
-    calidadAire: null,
+    humidity: null,
+    noise: null,
+    UV: null,
+    airQuality: null,
     CO2: null,
   });
 
-  // Estados para las recompensas
+  // States for rewards
   const [tokens, setTokens] = useState(0);
 
-  // Estados para mensajes de éxito o error
+  // States for success or error messages
   const [message, setMessage] = useState({ type: '', content: '' });
 
-  // Función para registrar la antena
+  // Function to register the antenna
   const registerAntenna = async (e) => {
     e.preventDefault();
 
-    // Validación del formulario
+    // Form validation
     if (!antennaId.trim()) {
-      setMessage({ type: 'error', content: 'El ID de la antena es obligatorio.' });
+      setMessage({ type: 'error', content: 'The antenna ID is required.' });
       return;
     }
 
     try {
       const response = await axios.post('/api/registerAntenna', { antennaId });
       setIsRegistered(true);
-      setMessage({ type: 'success', content: 'Antena registrada exitosamente.' });
+      setMessage({ type: 'success', content: 'Antenna registered successfully.' });
     } catch (error) {
-      setMessage({ type: 'error', content: 'Error al registrar la antena.' });
+      setMessage({ type: 'error', content: 'Error registering the antenna.' });
       console.error(error);
     }
   };
 
-  // Función para obtener los datos de la antena
+  // Function to get data from the antenna
   const getDataFromAntenna = async () => {
     try {
       const response = await axios.get(`/api/getData/${antennaId}`);
       const data = response.data;
       setSensorData({
-        humedad: data.humedad,
-        ruido: data.ruido,
-        rayosUV: data.rayosUV,
-        calidadAire: data.calidadAire,
+        humidity: data.humidity,
+        noise: data.noise,
+        UV: data.UV,
+        airQuality: data.airQuality,
         CO2: data.CO2,
       });
       setTokens(data.tokens);
     } catch (error) {
-      setMessage({ type: 'error', content: 'Error al obtener los datos de la antena.' });
+      setMessage({ type: 'error', content: 'Error retrieving data from the antenna.' });
       console.error(error);
     }
   };
 
-  // Función para reclamar recompensas
+  // Function to claim rewards
   const claimRewards = async () => {
     try {
       const response = await axios.post('/api/claimRewards', { antennaId });
       setTokens(0);
-      setMessage({ type: 'success', content: 'Recompensas reclamadas exitosamente.' });
+      setMessage({ type: 'success', content: 'Rewards claimed successfully.' });
     } catch (error) {
-      setMessage({ type: 'error', content: 'Error al reclamar las recompensas.' });
+      setMessage({ type: 'error', content: 'Error claiming rewards.' });
       console.error(error);
     }
   };
 
-  // useEffect para obtener los datos cuando la antena está registrada
+  // useEffect to get data when the antenna is registered
   useEffect(() => {
     if (isRegistered) {
       getDataFromAntenna();
 
-      // Opcional: puedes configurar intervalos para actualizar los datos periódicamente
+      // Optional: set intervals to update data periodically
       const interval = setInterval(() => {
         getDataFromAntenna();
-      }, 60000); // Actualiza cada 60 segundos
+      }, 60000); // Update every 60 seconds
 
       return () => clearInterval(interval);
     }
@@ -90,12 +90,14 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboardContainer}>
-      {/* Registro de Antena */}
+    
+
+      {/* Antenna Registration */}
       <div className={styles.card}>
-        <h2>Registro de Antena</h2>
+        <h2>Antenna Registration</h2>
         <form onSubmit={registerAntenna}>
           <div className={styles.formGroup}>
-            <label htmlFor="antennaId">ID Único del Dispositivo:</label>
+            <label htmlFor="antennaId">Unique Device ID:</label>
             <input
               type="text"
               id="antennaId"
@@ -105,7 +107,7 @@ const Dashboard = () => {
             />
           </div>
           <button type="submit" className={styles.button}>
-            Registrar Antena
+            Register Antenna
           </button>
         </form>
         {message.content && (
@@ -115,43 +117,43 @@ const Dashboard = () => {
         )}
       </div>
 
-      {/* Datos Recolectados */}
+      {/* Collected Data */}
       {isRegistered && (
         <div className={styles.card}>
-          <h2>Datos Recolectados</h2>
+          <h2>Collected Data</h2>
           <div className={styles.sensorData}>
             <div className={styles.sensor}>
-              <span>Humedad:</span>
-              <span>{sensorData.humedad !== null ? `${sensorData.humedad}%` : 'Cargando...'}</span>
+              <span>Humidity:</span>
+              <span>{sensorData.humidity !== null ? `${sensorData.humidity}%` : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
-              <span>Ruido:</span>
-              <span>{sensorData.ruido !== null ? `${sensorData.ruido} dB` : 'Cargando...'}</span>
+              <span>Noise:</span>
+              <span>{sensorData.noise !== null ? `${sensorData.noise} dB` : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
-              <span>Rayos UV:</span>
-              <span>{sensorData.rayosUV !== null ? sensorData.rayosUV : 'Cargando...'}</span>
+              <span>UV Rays:</span>
+              <span>{sensorData.UV !== null ? sensorData.UV : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
-              <span>Calidad de Aire:</span>
-              <span>{sensorData.calidadAire !== null ? sensorData.calidadAire : 'Cargando...'}</span>
+              <span>Air Quality:</span>
+              <span>{sensorData.airQuality !== null ? sensorData.airQuality : 'Loading...'}</span>
             </div>
             <div className={styles.sensor}>
               <span>CO2:</span>
-              <span>{sensorData.CO2 !== null ? `${sensorData.CO2} ppm` : 'Cargando...'}</span>
+              <span>{sensorData.CO2 !== null ? `${sensorData.CO2} ppm` : 'Loading...'}</span>
             </div>
           </div>
         </div>
       )}
 
-      {/* Recompensas */}
+      {/* Rewards */}
       {isRegistered && (
         <div className={styles.card}>
-          <h2>Recompensas</h2>
+          <h2>Rewards</h2>
           <div className={styles.rewards}>
-            <p>Tokens Ganados: {tokens}</p>
+            <p>Tokens Earned: {tokens}</p>
             <button onClick={claimRewards} className={styles.button}>
-              Reclamar Recompensas
+              Claim Rewards
             </button>
           </div>
         </div>
