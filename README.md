@@ -78,14 +78,14 @@ module.exports = {
 
 ## Technologies Used
 
-Smart Contracts: Solidity, deployed on Scroll (Layer 2)
-Frontend: React,
-Backend: Node.js
-Blockchain Interaction: Axios, Ethers.js, Alchemy API
-Scroll Network: Zero-Knowledge Rollups (ZK-rollups) for secure and scalable transactions
-Hardhat: Development environment for compiling, testing, and deploying smart contracts
-Photoshop: For graphic Design
-Blender: Antenna Prototype ideation
+- **Smart Contracts**: Solidity, deployed on Scroll (Layer 2)
+- **Frontend**: React,
+- **Backend**: Node.js
+- **Blockchain Interaction**: Axios, Ethers.js, Alchemy API
+- **Scroll Network**: Zero-Knowledge Rollups (ZK-rollups) for secure and scalable transactions
+- **Hardhat**: Development environment for compiling, testing, and deploying smart contracts
+- **Photoshop**: For graphic Design
+- **Blender**: Antenna Prototype ideation
 
 ----
 
