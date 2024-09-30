@@ -14,7 +14,7 @@ The objective is to provide real-time data to decision-makers to foster the deve
 
 ## Demo
 
-[Watch our demo video](https://your-demo-link.com) to see how REMBU works and how you can participate in urban forest monitoring!
+[Watch our demo video](https://youtu.be/-hnyZa80AKs) to see how REMBU works and how you can participate in urban forest monitoring!
 
 ----------
 
