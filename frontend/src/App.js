@@ -42,19 +42,27 @@ function App() {
       </section>
 
       {/* Technology */}
-      <section className="technology" id="technology">
-        <h2>Advanced Technology</h2>
-        <div className="technology-content">
-          <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmSEqUgcTumgYyApoqKgqjVs1tMtkARhjqHRrKgFkjjPeK" alt="Antenna Prototype" className="antena-image" />
-          <div className="tech-description">
-            <h3>How Our Antenna Works</h3>
-            <p>
-              Our antennas are equipped with multiple sensors that collect data on temperature, humidity, CO₂ levels, and more. This data is securely sent to our decentralized network, ensuring accuracy and reliability.
-            </p>
-            <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmYhx1W8XctfXF8Qhv2RafgpZfVygLkEp4z5PZQKR3ModC" alt="Detailed Sensors" className="antena-detallada" />
-          </div>
-        </div>
-      </section>
+<section className="technology" id="technology">
+  <h2>Advanced Technology</h2>
+  <div className="technology-content">
+    <div className="tech-description">
+      <h3>How Our Antenna Works</h3>
+      <p>
+        Our antennas are equipped with multiple sensors that collect data on temperature, humidity, CO₂ levels, and more. This data is securely sent to our decentralized network, ensuring accuracy and reliability.
+      </p>
+    </div>
+    <img
+      src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmYhx1W8XctfXF8Qhv2RafgpZfVygLkEp4z5PZQKR3ModC"
+      alt="Detailed Sensors"
+      className="antena-detallada"
+    />
+    <img
+      src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmSEqUgcTumgYyApoqKgqjVs1tMtkARhjqHRrKgFkjjPeK"
+      alt="Antenna Prototype"
+      className="antena-image"
+    />
+  </div>
+</section>
 
       {/* Tokenomics */}
       <section className="tokenomics" id="tokenomics">

@@ -58,7 +58,8 @@ button:hover {
   align-items: center;
   text-align: center;
   padding: 180px 20px 120px 20px;
-  background: var(--semi-transparent-black);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(-1px);
   position: relative;
 }
 
@@ -69,7 +70,8 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--semi-transparent-black);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
   z-index: 1;
 }
 
@@ -79,17 +81,11 @@ button:hover {
 }
 
 .hero .logo {
-  width: 130px;
-  height: 130px;
+  width: 240px;
+  height: 240px;
   margin-bottom: 20px;
-  animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
 
 .hero h1 {
   font-family: 'Poppins', sans-serif;
@@ -141,7 +137,7 @@ button:hover {
   border-radius: 10px;
   width: 250px;
   text-align: center;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -163,8 +159,8 @@ button:hover {
 
 /* Technology Section */
 .technology {
-  background: var(--semi-transparent-black);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
 }
 
 .technology h2 {
@@ -175,21 +171,23 @@ button:hover {
 }
 
 .technology-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
 }
 
-.antena-image {
+.antena-detallada {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   border-radius: 12px;
+  margin-top: 20px;
   transition: transform 0.3s ease;
 }
 
-.antena-image:hover {
+.antena-detallada:hover {
   transform: scale(1.05);
 }
 
@@ -208,15 +206,14 @@ button:hover {
   font-size: 1rem;
 }
 
-.antena-detallada {
+.antena-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 12px;
-  margin-top: 20px;
   transition: transform 0.3s ease;
 }
 
-.antena-detallada:hover {
+.antena-image:hover {
   transform: scale(1.05);
 }
 
@@ -253,8 +250,8 @@ button:hover {
 
 /* Impact Section */
 .impact {
-  background: var(--semi-transparent-black);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
 }
 
 .impact h2 {
