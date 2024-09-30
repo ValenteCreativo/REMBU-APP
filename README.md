@@ -6,9 +6,9 @@ REMBU is a DePIN project designed to monitor and protect urban forests through d
 
 This project incentivizes users to contribute to the health of their local green spaces by providing them with rewards for sharing data about their environment.
 
-By using REMBU, individuals can contribute to environmental sustainability while earning tokens. The collected data is securely stored on the blockchain using the Scroll Layer 2 network, ensuring transparency and decentralized access.
+By using REMBU, individuals can contribute to environmental sustainability while earning tokens and voting for worth funding environmental initiatives. The collected data is securely stored and tokenized on the blockchain using the Scroll Layer 2 network, ensuring transparency and decentralized access. 
 
-The objective is to provide real-time data to decision-makers to foster the development of urban forests infrastructure, with the hypothesis that is the best action we could make to protect us as a species and the planet from climate change's effects. 
+The objective is to provide real-time data to decision-makers to foster the development of urban forests infrastructure, **with the hypothesis that is the best action we could make to protect us as a species and the planet from climate change's effects.**
 
 ----------
 
@@ -71,7 +71,7 @@ module.exports = {
     }
   }
 };
-
+```
 
 
 ----------
