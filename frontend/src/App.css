@@ -109,7 +109,7 @@ button:hover {
 
 /* Benefits Section */
 .benefits {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
 }
 
@@ -212,7 +212,7 @@ button:hover {
 
 /* Tokenomics Section */
 .tokenomics {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
   text-align: center;
 }
@@ -256,7 +256,6 @@ button:hover {
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
-  background: rgba(16, 1, 1, 0.289);
 }
 
 .impact-image {
@@ -290,7 +289,7 @@ button:hover {
 
 /* Footer */
 .footer {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
   text-align: center;
   padding: 30px 20px;

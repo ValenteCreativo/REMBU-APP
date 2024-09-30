@@ -1,0 +1,133 @@
+/* dashboard.module.css */
+
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+  }
+  
+  .card {
+    background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid var(--primary-green);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transition: border 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: var(--primary-green);
+    outline: none;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: var(--primary-green);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: var(--hover-green);
+    transform: translateY(-2px);
+  }
+  
+  .sensorData {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .sensor {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .rewards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: var(--white);
+  }
+  
+  .error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .success {
+    color: var(--primary-green);
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .sensorData {
+      grid-template-columns: 1fr;
+    }
+  
+    .card {
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .button {
+      font-size: 1rem;
+    }
+  }
+  

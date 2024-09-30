@@ -1,0 +1,89 @@
+.preorderContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+  }
+  
+  .title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .imageContainer {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .antennaImage {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label {
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  
+  .input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-green);
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+  }
+  
+  .submitButton {
+    padding: 12px 20px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: var(--hover-green);
+    transform: translateY(-3px);
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--primary-green);
+  }
+  
+  .antennaInfo {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--white);
+  }
+  
+  .benefit {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--primary-green);
+  }
+  

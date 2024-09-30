@@ -1,0 +1,38 @@
+/* src/Header.css */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.1); /* Fondo translúcido */
+    backdrop-filter: blur(4px); /* Efecto blur */
+    position: static;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    height: 60px; /* Ajusta el tamaño del logo según lo necesites */
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-green); /* Color del botón según tu diseño */
+    color: var(--white); /* Color del texto */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones para efectos */
+}
+
+.button:hover {
+    background-color: var(--hover-green); /* Color al hacer hover */
+    transform: translateY(-3px); /* Efecto al hacer hover */
+}
