@@ -1,4 +1,3 @@
-// dashboard.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './dashboard.module.css';
@@ -8,81 +7,50 @@ const Dashboard = () => {
   const [antennaId, setAntennaId] = useState('');
   const [isRegistered, setIsRegistered] = useState(false);
 
-  // States for collected data
-  const [sensorData, setSensorData] = useState({
-    humidity: null,
-    noise: null,
-    UV: null,
-    airQuality: null,
-    CO2: null,
-  });
-
-  // States for rewards
-  const [tokens, setTokens] = useState(0);
+  // States for signal and technical data (simulated)
+  const [signalStrength, setSignalStrength] = useState(0);
+  const [coverage, setCoverage] = useState(0);
+  const [dataSpeed, setDataSpeed] = useState(0);
 
   // States for success or error messages
   const [message, setMessage] = useState({ type: '', content: '' });
 
   // Function to register the antenna
-  const registerAntenna = async (e) => {
+  const registerAntenna = (e) => {
     e.preventDefault();
 
-    // Form validation
     if (!antennaId.trim()) {
       setMessage({ type: 'error', content: 'The antenna ID is required.' });
       return;
     }
 
-    try {
-      const response = await axios.post('/api/registerAntenna', { antennaId });
+    if (antennaId === 'P5-884422') {
       setIsRegistered(true);
       setMessage({ type: 'success', content: 'Antenna registered successfully.' });
-    } catch (error) {
-      setMessage({ type: 'error', content: 'Error registering the antenna.' });
-      console.error(error);
+      simulateAntennaPerformance(); // Simulate signal data when registered
+    } else {
+      setMessage({ type: 'error', content: 'Invalid antenna ID.' });
     }
   };
 
-  // Function to get data from the antenna
-  const getDataFromAntenna = async () => {
-    try {
-      const response = await axios.get(`/api/getData/${antennaId}`);
-      const data = response.data;
-      setSensorData({
-        humidity: data.humidity,
-        noise: data.noise,
-        UV: data.UV,
-        airQuality: data.airQuality,
-        CO2: data.CO2,
-      });
-      setTokens(data.tokens);
-    } catch (error) {
-      setMessage({ type: 'error', content: 'Error retrieving data from the antenna.' });
-      console.error(error);
-    }
+  // Simulate antenna performance metrics
+  const simulateAntennaPerformance = () => {
+    // Simulate random values for signal strength, coverage, and data speed
+    const randomSignal = Math.floor(Math.random() * 101); // 0-100%
+    const randomCoverage = Math.floor(Math.random() * 100 + 50); // 50-150 meters
+    const randomDataSpeed = Math.floor(Math.random() * 100 + 20); // 20-120 Mbps
+
+    setSignalStrength(randomSignal);
+    setCoverage(randomCoverage);
+    setDataSpeed(randomDataSpeed);
   };
 
-  // Function to claim rewards
-  const claimRewards = async () => {
-    try {
-      const response = await axios.post('/api/claimRewards', { antennaId });
-      setTokens(0);
-      setMessage({ type: 'success', content: 'Rewards claimed successfully.' });
-    } catch (error) {
-      setMessage({ type: 'error', content: 'Error claiming rewards.' });
-      console.error(error);
-    }
-  };
-
-  // useEffect to get data when the antenna is registered
+  // Simulate periodic updates for performance data
   useEffect(() => {
     if (isRegistered) {
-      getDataFromAntenna();
-
-      // Optional: set intervals to update data periodically
       const interval = setInterval(() => {
-        getDataFromAntenna();
-      }, 60000); // Update every 60 seconds
+        simulateAntennaPerformance();
+      }, 5000); // Update every 5 seconds for demo effect
 
       return () => clearInterval(interval);
     }
@@ -90,8 +58,6 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboardContainer}>
-    
-
       {/* Antenna Registration */}
       <div className={styles.card}>
         <h2>Antenna Registration</h2>
@@ -117,44 +83,23 @@ const Dashboard = () => {
         )}
       </div>
 
-      {/* Collected Data */}
+      {/* Signal Strength & Coverage Simulation */}
       {isRegistered && (
         <div className={styles.card}>
-          <h2>Collected Data</h2>
+          <h2>Signal Strength & Coverage</h2>
           <div className={styles.sensorData}>
             <div className={styles.sensor}>
-              <span>Humidity:</span>
-              <span>{sensorData.humidity !== null ? `${sensorData.humidity}%` : 'Loading...'}</span>
+              <span>Signal Strength:</span>
+              <span>{signalStrength}%</span>
             </div>
             <div className={styles.sensor}>
-              <span>Noise:</span>
-              <span>{sensorData.noise !== null ? `${sensorData.noise} dB` : 'Loading...'}</span>
+              <span>Coverage Range:</span>
+              <span>{coverage} meters</span>
             </div>
             <div className={styles.sensor}>
-              <span>UV Rays:</span>
-              <span>{sensorData.UV !== null ? sensorData.UV : 'Loading...'}</span>
+              <span>Data Transfer Speed:</span>
+              <span>{dataSpeed} Mbps</span>
             </div>
-            <div className={styles.sensor}>
-              <span>Air Quality:</span>
-              <span>{sensorData.airQuality !== null ? sensorData.airQuality : 'Loading...'}</span>
-            </div>
-            <div className={styles.sensor}>
-              <span>CO2:</span>
-              <span>{sensorData.CO2 !== null ? `${sensorData.CO2} ppm` : 'Loading...'}</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Rewards */}
-      {isRegistered && (
-        <div className={styles.card}>
-          <h2>Rewards</h2>
-          <div className={styles.rewards}>
-            <p>Tokens Earned: {tokens}</p>
-            <button onClick={claimRewards} className={styles.button}>
-              Claim Rewards
-            </button>
           </div>
         </div>
       )}

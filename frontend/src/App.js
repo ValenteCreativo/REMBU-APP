@@ -36,7 +36,7 @@ function App() {
             <section className="hero">
               <img src="https://red-causal-armadillo-397.mypinata.cloud/ipfs/QmZrw6i17V2fMr23RXiLXT3aGqEDjMRfPkFv7RT5xAvA29" alt="Logo" className="logo" />
               <h1>Monitor and protect urban forests from your home</h1>
-              <p>Install an antenna, create an account, and receive monthly rewards for environmental preservation.</p>
+              <p>Install an antenna, create an account, receive monthly rewards for environmental preservation and vote for your favorite local impact initiatives!</p>
               <button className="cta-button">Join REMBU Community</button>
             </section>
 
@@ -47,7 +47,7 @@ function App() {
                 <div className="benefit">
                   <FaWallet size={40} color="#2ecc71" />
                   <h3>Earn Rewards</h3>
-                  <p>Receive monthly rewards for contributing to urban forest monitoring.</p>
+                  <p>Receive monthly rewards for contributing to urban forest monitoring and vote for environmental impact initiatives worth funding in our DAO! .</p>
                 </div>
                 <div className="benefit">
                   <FaChartLine size={40} color="#2ecc71" />

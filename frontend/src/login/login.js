@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     // Simple authentication simulation
     if (email === 'admin@rembu.com' && password === 'admin') {
-      navigate('/dashboard3');
+      navigate('/dashboard');
     } else {
       alert('Incorrect credentials. Use admin/admin');
     }
