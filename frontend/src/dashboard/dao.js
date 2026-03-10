@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios'; // Not used with simulated data
 import styles from './dao.module.css';
 
 const DAO = () => {
@@ -80,6 +80,7 @@ const DAO = () => {
 
   useEffect(() => {
     fetchProposals();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

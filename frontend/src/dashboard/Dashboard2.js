@@ -1,19 +1,19 @@
 // src/pages/dashboard2.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './dashboard.module.css';
 import useWeb3 from '../hooks/useWeb3'; // Import the custom hook
 import RembuTokenABI from '../contracts/RembuToken.json'; // Import the ABI
 import { ethers } from 'ethers';
 
 const CONTRACT_ADDRESS = '0x63374859343C338DA0348136Ad5a2F3c7392dA51'; // Deployed contract address
-const OWNER_WALLET_ADDRESS = '0xYourWalletAddress'; // Your wallet address
+// const OWNER_WALLET_ADDRESS = '0xYourWalletAddress'; // Your wallet address - not used
 
 const Dashboard2 = () => {
   const { connect, disconnect, active, account, library } = useWeb3();
 
-  const [isRegistered, setIsRegistered] = useState(true);
-  const [sensorData, setSensorData] = useState({
+  const [isRegistered] = useState(true);
+  const [sensorData] = useState({
     humidity: 55,
     noise: 65,
     UVRays: 8,
